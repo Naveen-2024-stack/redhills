@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlavorDrop | Food Order</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="bg-orbit"></div>
+    <header class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Food delivery, freshly crafted</p>
+        <h1>FlavorDrop</h1>
+        <p class="lead">Build your cart, pick a delivery time, and we’ll handle the rest.</p>
+        <div class="hero-actions">
+          <button class="primary" id="scrollMenu">Order Now</button>
+          <button class="ghost" id="viewOrders">Recent Orders</button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Today’s Highlights</h3>
+        <ul>
+          <li>Farm-fresh ingredients</li>
+          <li>30-45 min delivery window</li>
+          <li>Realtime cart updates</li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="menu" id="menu">
+        <div class="section-head">
+          <h2>Menu Picks</h2>
+          <p>Tap to add, adjust quantities in your cart.</p>
+        </div>
+        <div class="menu-grid" id="menuGrid"></div>
+      </section>
+
+      <section class="cart-section">
+        <div class="section-head">
+          <h2>Your Cart</h2>
+          <p>Keep it light or go all in. We’ll calculate totals.</p>
+        </div>
+        <div class="cart-layout">
+          <div class="cart-panel" id="cartPanel">
+            <div class="cart-empty">Your cart is waiting.</div>
+          </div>
+          <form class="checkout" id="checkoutForm">
+            <h3>Checkout</h3>
+            <label>
+              Name
+              <input type="text" name="name" required placeholder="Your name" />
+            </label>
+            <label>
+              Phone
+              <input type="tel" name="phone" required placeholder="+1 555 123 4567" />
+            </label>
+            <label>
+              Address
+              <textarea name="address" required rows="3" placeholder="Delivery address"></textarea>
+            </label>
+            <label>
+              Delivery Time
+              <select name="deliveryTime">
+                <option>ASAP (30-45 min)</option>
+                <option>In 60 minutes</option>
+                <option>In 90 minutes</option>
+              </select>
+            </label>
+            <div class="summary">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <strong id="subtotal">$0.00</strong>
+              </div>
+              <div class="summary-row">
+                <span>Delivery</span>
+                <strong id="deliveryFee">$2.50</strong>
+              </div>
+              <div class="summary-row total">
+                <span>Total</span>
+                <strong id="total">$0.00</strong>
+              </div>
+            </div>
+            <button class="primary" type="submit">Place Order</button>
+            <p class="form-note" id="statusMsg"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="orders" id="orders">
+        <div class="section-head">
+          <h2>Recent Orders</h2>
+          <p>Showing the latest 20 orders from MongoDB.</p>
+        </div>
+        <div class="orders-list" id="ordersList"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>FlavorDrop • Crafted with care, delivered with speed.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
